@@ -1,49 +1,64 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
-		</view>
-	</view>
+  <view class="content">
+    <view class="header"></view>
+    <view class="body">
+      <MenuItem
+        v-for="menu in menuList"
+        :key="menu.icon"
+        :icon="menu.icon"
+        :title="menu.title"
+        :link="menu.link"
+      />
+    </view>
+    <view class="foot"> </view>
+  </view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
+import MenuItem from '../../components/menuItem.vue';
+import menu from './menu';
 
-		},
-		methods: {
-
-		}
-	}
+export default {
+  components: {
+    MenuItem,
+  },
+  data() {
+    return {
+      menuList: menu.menuList,
+    };
+  },
+  onLoad() {},
+  methods: {},
+};
 </script>
 
-<style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
+<style lang="scss" scoped>
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.menu-item {
+  padding: 30rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
+  width: 187.5rpx;
+  image {
+    width: 70%;
+    display: block;
+  }
+  .desc {
+    margin-top: 15rpx;
+    font-size: 26rpx;
+    color: #666;
+  }
+}
 </style>
