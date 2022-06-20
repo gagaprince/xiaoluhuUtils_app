@@ -29,6 +29,12 @@ export default {
   },
   onLoad() {},
   methods: {},
+  onShareAppMessage() {
+    return {
+      title: '万能口袋王，收集常用的互联网工具包，给你的在线生活提供助力',
+      path: '/pages/index/index?_from=share',
+    };
+  },
 };
 </script>
 

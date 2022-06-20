@@ -72,7 +72,8 @@
     "luch-request": "^3.0.7",
     "regenerator-runtime": "^0.12.1",
     "vue": "^2.6.11",
-    "vuex": "^3.2.0"
+    "vuex": "^3.2.0",
+    "weapp-qrcode": "^1.0.0"
   },
   "devDependencies": {
     "@babel/runtime": "~7.12.0",

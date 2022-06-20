@@ -17,6 +17,38 @@
       "style": {
         "navigationBarTitleText": "网页长图"
       }
+    },
+    {
+      "path": "pages/qrcode/index",
+      "style": {
+        "navigationBarTitleText": "二维码"
+      }
+    },
+    {
+      "path": "pages/header/index",
+      "style": {
+        "navigationBarTitleText": "情侣头像"
+      }
+    },
+    {
+      "path": "pages/urlcode/index",
+      "style": {
+        "navigationBarTitleText": "urlencode转换"
+      }
+    },
+    {
+      "path": "pages/calculater/salary",
+      "style": {
+        "navigationBarTitleText": "工资计算器",
+        "navigationBarBackgroundColor": "#1ebc21",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/calculater/city/index",
+      "style": {
+        "navigationBarTitleText": "城市选择"
+      }
     }
   ],
   "globalStyle": {
