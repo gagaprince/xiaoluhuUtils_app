@@ -10,7 +10,8 @@ export default {
   },
   methods: {
     changeCity(res) {
-      console.log(res);
+      uni.setStorageSync('currentCity', res);
+      uni.navigateBack();
     },
   },
 };

@@ -14,7 +14,7 @@
                 v-for="(item, index) in hotCityList"
                 :key="index"
                 @click="clickCity(item)"
-                >{{ item.cityName }}</span
+                >{{ item.name }}</span
               >
             </div>
           </div>
@@ -56,22 +56,60 @@
 </template>
 <script>
 import { request } from '../../common/util/request';
-const cityList = require('./city.js').citys;
 export default {
   name: 'vue-city',
   props: {
     hotCityList: {
       probeType: Array,
       default: [
-        { cityName: '深圳市' },
-        { cityName: '上海市' },
-        { cityName: '北京市' },
-        { cityName: '广州市' },
-        { cityName: '杭州市' },
-        { cityName: '武汉市' },
-        { cityName: '天津市' },
-        { cityName: '南京市' },
-        { cityName: '成都市' },
+        {
+          name: '北京',
+          short: 'bj',
+          text: 'bj 北京',
+          value: 'beijing',
+        },
+        {
+          name: '上海',
+          short: 'sh',
+          text: 'sh 上海',
+          value: 'shanghai',
+        },
+        {
+          name: '广州',
+          short: 'gz',
+          text: 'gz 广州',
+          value: 'guangzhou',
+        },
+        {
+          name: '杭州',
+          short: 'hz',
+          text: 'hz 杭州',
+          value: 'hangzhou',
+        },
+        {
+          name: '武汉',
+          short: 'wh',
+          text: 'wh 武汉',
+          value: 'wuhan',
+        },
+        {
+          name: '天津',
+          short: 'tj',
+          text: 'tj 天津',
+          value: 'tianjinshi',
+        },
+        {
+          name: '南京',
+          short: 'nj',
+          text: 'nj 南京',
+          value: 'nanjing',
+        },
+        {
+          name: '成都',
+          short: 'cd',
+          text: 'cd 成都',
+          value: 'chengdu',
+        },
       ],
     },
   },
@@ -87,9 +125,17 @@ export default {
 
   created() {},
   mounted() {
-    this.$nextTick(() => {
-      this.loadCityData();
-    });
+    const app = getApp();
+    const cityList = app.globalData.cityList;
+    if (cityList) {
+      this.cityList = cityList;
+    } else {
+      this.$nextTick(() => {
+        this.loadCityData().then(({ list }) => {
+          app.globalData.cityList = list;
+        });
+      });
+    }
   },
   methods: {
     async loadCityData() {
@@ -102,7 +148,9 @@ export default {
         console.log(ret);
         this.cityList = ret.list;
       }
+      return ret;
     },
+
     clickCity(index, char) {
       if (char) {
         this.$emit('changeCity', this.cityList[char][index]);
