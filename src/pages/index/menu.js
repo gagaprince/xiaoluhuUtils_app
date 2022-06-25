@@ -26,7 +26,7 @@ export default {
       icon: 'https://src.onlinedown.net/supply/sup_logo/logo-1122/33377_g.jpg',
     },
     {
-      link: '',
+      link: '/pages/calculater/yearEnd',
       title: '年终奖计算器',
       icon: 'https://pic.sucaibar.com/pic/201711/15/ed39b51701.png',
     },

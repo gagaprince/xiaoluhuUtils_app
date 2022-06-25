@@ -45,6 +45,14 @@
       }
     },
     {
+      "path": "pages/calculater/yearEnd",
+      "style": {
+        "navigationBarTitleText": "年终奖计算器",
+        "navigationBarBackgroundColor": "#1ebc21",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
       "path": "pages/calculater/city/index",
       "style": {
         "navigationBarTitleText": "城市选择"
