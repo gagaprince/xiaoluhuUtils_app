@@ -152,6 +152,12 @@ export default {
       }
     }
   },
+  onShareAppMessage() {
+    return {
+      title: '工资计算器,来算算你能拿多少',
+      path: '/pages/calculater/yearEnd?_from=share',
+    };
+  },
   methods: {
     checkSalary() {
       if (this.salaryValue == 0) {

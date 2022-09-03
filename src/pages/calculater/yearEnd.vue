@@ -69,6 +69,12 @@ export default {
     };
   },
   onShow() {},
+  onShareAppMessage() {
+    return {
+      title: '年终奖计算器,来算算你扣了多少税',
+      path: '/pages/calculater/salary?_from=share',
+    };
+  },
   methods: {
     setChecked(e) {
       this.isReversoChecked = e.detail.value;
