@@ -1,0 +1,36 @@
+<block>
+  <view class="muyu-bg" bindtap="qiao">
+    <view class="muyu-title">
+      功德：{{gongde}}
+    </view>
+    <view class="muyu-img-fr">
+      <view class="plus-fr">
+        <view class="plus" animation="{{gongdeAnimationData1}}">
+          功德+1
+        </view>
+      </view>
+      <view class="plus-fr">
+        <view class="plus" animation="{{gongdeAnimationData2}}">
+          功德+1
+        </view>
+      </view>
+      <view class="plus-fr">
+        <view class="plus" animation="{{gongdeAnimationData3}}">
+          功德+1
+        </view>
+      </view>
+      <view class="plus-fr">
+        <view class="plus" animation="{{gongdeAnimationData4}}">
+          功德+1
+        </view>
+      </view>
+      <view class="muyu-img">
+        <image 
+          animation="{{muyuAnimationData}}"
+          src="https://p0.meituan.net/travelcube/b3251a31ffb4b53217cbce33fae69c5c557472.png"
+          mode="widthFix"
+          ></image>
+      </view>
+    </view>
+  </view>
+</block>

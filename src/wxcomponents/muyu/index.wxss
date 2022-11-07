@@ -1,0 +1,39 @@
+.muyu-bg{
+  position: relative;
+  background: #000000;
+  height:100vh;
+  width:100vw;
+  overflow: hidden;
+}
+.muyu-title{
+  margin-top:20rpx;
+  margin-left:30rpx;
+  color: #ffffff;
+  font-size: 40rpx;
+}
+.muyu-img-fr{
+  position: absolute;
+  bottom:20rpx;
+  width:100%;
+}
+.plus-fr{
+  position: absolute;
+  top: 60rpx;
+  left:100rpx;
+  z-index: 1;
+}
+.plus-fr .plus{
+  font-size: 30rpx;
+  color: #fff;
+  opacity: 0;
+}
+.muyu-img{
+  display: flex;
+  justify-content: center;
+  width:100%;
+  align-items: center;
+}
+.muyu-img image{
+  display: block;
+  width:600rpx;
+}

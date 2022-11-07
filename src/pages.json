@@ -57,6 +57,17 @@
       "style": {
         "navigationBarTitleText": "城市选择"
       }
+    },
+    {
+      "path": "pages/muyu/index",
+      "style": {
+        "navigationBarTitleText": "",
+        "navigationBarBackgroundColor": "#000000",
+        "navigationBarTextStyle": "white",
+        "usingComponents":{
+          "muyu": "/wxcomponents/muyu/index"
+        }
+      }
     }
   ],
   "globalStyle": {
