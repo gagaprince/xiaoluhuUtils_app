@@ -17,6 +17,8 @@
 <script>
 import MenuItem from '../../components/menuItem.vue';
 import menu from './menu';
+import { getSelf } from '../../common/util/request';
+const LOCAL_MENU_LIST_KEY = 'local_menu_list_key';
 
 export default {
   components: {
@@ -27,8 +29,30 @@ export default {
       menuList: menu.menuList,
     };
   },
+  mounted() {
+    this.loadMenuFormLocal();
+    this.loadMenu();
+  },
   onLoad() {},
-  methods: {},
+  methods: {
+    loadMenuFormLocal() {
+      const menuList = wx.getStorageSync(LOCAL_MENU_LIST_KEY);
+      this.menuList = menuList;
+    },
+    async loadMenu() {
+      const ret = await getSelf('/wx/mcc', {
+        key: 'utils-menu-list',
+      });
+      if (ret.code === 0) {
+        console.log(ret.data);
+        if (ret.data) {
+          const menuList = JSON.parse(ret.data);
+          wx.setStorageSync(LOCAL_MENU_LIST_KEY, menuList);
+          this.menuList = menuList;
+        }
+      }
+    },
+  },
   onShareAppMessage() {
     return {
       title: '万能口袋王，收集常用的互联网工具包，给你的在线生活提供助力',

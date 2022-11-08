@@ -1,10 +1,21 @@
 import Request from 'luch-request';
+const isProduction = process.env.NODE_ENV === 'production';
 
 const http = new Request();
 
 const TIMEOUT = 10000;
 
-export const get = async (url, data, header, timeout = TIMEOUT) => {
+const origin = isProduction
+  ? 'https://vd.gagaprince.top'
+  : 'http://localhost:3000';
+
+export const getSelf = async (path, data) => {
+  const url = `${origin}${path}`;
+  console.log(url);
+  return get(url, data);
+};
+
+export const get = async (url, data, header = {}, timeout = TIMEOUT) => {
   return http
     .get(url, {
       params: data,
