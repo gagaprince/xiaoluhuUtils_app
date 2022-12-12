@@ -68,6 +68,14 @@
           "muyu": "/wxcomponents/muyu/index"
         }
       }
+    },
+    {
+      "path": "pages/english/index",
+      "style": {
+        "navigationBarTitleText": "天天记单词",
+        "navigationBarBackgroundColor": "#6A92FE",
+        "navigationBarTextStyle": "white"
+      }
     }
   ],
   "globalStyle": {

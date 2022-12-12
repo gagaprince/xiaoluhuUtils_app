@@ -35,5 +35,15 @@ export default {
       title: '房贷计算器',
       icon: 'https://appcdn-global.zingfront.com/imgs/2436a53153bf08e54193bdae367f68a7.jpg',
     },
+    {
+      "link": "/pages/muyu/index",
+      "title": "功德",
+      "icon": "https://i1-ws-resource.ccplay.cn/media/packages/2022/10/20/1509-30-621/0.png-icon.xhuge"
+    },
+    {
+      link: '/pages/english/index',
+      title: '天天背单词',
+      icon: 'https://pp.myapp.com/ma_icon/0/icon_54244724_1668678681/256'
+    },
   ],
 };

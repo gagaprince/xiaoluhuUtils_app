@@ -18,6 +18,7 @@
 import MenuItem from '../../components/menuItem.vue';
 import menu from './menu';
 import { getSelf } from '../../common/util/request';
+const isProduction = process.env.NODE_ENV === 'production';
 const LOCAL_MENU_LIST_KEY = 'local_menu_list_key';
 
 export default {
@@ -30,11 +31,18 @@ export default {
     };
   },
   mounted() {
-    this.loadMenuFormLocal();
-    this.loadMenu();
+    if(this.isProduction){
+      this.loadMenuFormLocal();
+      this.loadMenu();
+    }else{
+      this.loadMenuFromFile();
+    }
   },
   onLoad() {},
   methods: {
+    loadMenuFromFile() {
+      this.menuList = require('./menu.js').menuList;
+    },
     loadMenuFormLocal() {
       const menuList = wx.getStorageSync(LOCAL_MENU_LIST_KEY);
       this.menuList = menuList;
