@@ -15,7 +15,7 @@
         </div>
         <div class="english-cards">
             <div class="card-fr">
-
+                <calendar></calendar>
             </div>
         </div>
         <div class="english-models">
@@ -26,7 +26,12 @@
     </div>
 </template>
 <script>
-
+    import calendar from './components/calendar'
+    export default {
+        components: {
+            calendar
+        }
+    }
 </script>
 
 <style lang="scss" scoped>
