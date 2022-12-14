@@ -15,7 +15,7 @@
         </div>
         <div class="english-cards">
             <div class="card-fr">
-                <calendar></calendar>
+                <calendar :markDays="markDays"></calendar>
             </div>
         </div>
         <div class="english-models">
@@ -28,6 +28,11 @@
 <script>
     import calendar from './components/calendar'
     export default {
+        data(){
+            return {
+                markDays:['2022-12-01','2022-12-12','2022-12-13']
+            }
+        },
         components: {
             calendar
         }
