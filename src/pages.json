@@ -76,6 +76,30 @@
         "navigationBarBackgroundColor": "#6A92FE",
         "navigationBarTextStyle": "white"
       }
+    },
+    {
+      "path": "pages/english/selectLesson/index",
+      "style": {
+        "navigationBarTitleText": "课程选择",
+        "navigationBarBackgroundColor": "#6A92FE",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/english/studyWords/ready",
+      "style": {
+        "navigationBarTitleText": "准备开始",
+        "navigationBarBackgroundColor": "#6A92FE",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/english/studyWords/study",
+      "style": {
+        "navigationBarTitleText": "学习中",
+        "navigationBarBackgroundColor": "#6A92FE",
+        "navigationBarTextStyle": "white"
+      }
     }
   ],
   "globalStyle": {

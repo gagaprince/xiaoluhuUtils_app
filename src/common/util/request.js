@@ -31,6 +31,9 @@ export const get = async (url, data, header = {}, timeout = TIMEOUT) => {
 };
 
 export const post = async (url, data, header, timeout = TIMEOUT) => {
+  if(url.indexOf('http')===-1){
+    url = `${origin}${url}`;
+  }
   return http
     .post(url, data, {
       header,

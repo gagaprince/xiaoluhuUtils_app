@@ -18,10 +18,16 @@
                 <calendar :markDays="markDays"></calendar>
             </div>
         </div>
+        <div class="english-lesson-select">
+            <div class="lesson-select-btn" @tap="goSelectPage">
+                选一本书
+            </div>
+        </div>
         <div class="english-models">
             <div class="model-desc">这里是一句描述</div>
-            <div class="start-btn">开始记单词</div>
-            <div class=""></div>
+            <div class="play-btn start-btn" @tap="startStudy">开始记单词</div>
+            <div class="play-btn">对战</div>
+            <div class="play-btn">测测我的词汇量</div>
         </div>
     </div>
 </template>
@@ -35,6 +41,31 @@
         },
         components: {
             calendar
+        },
+        onShow(){
+            // 检查localstorage是否有选课，有的话切换选课
+            this.checkSelectLesson();
+        },
+        methods:{
+            checkSelectLesson(){
+                const selectObj = uni.getStorageSync('GAGAUTIL_BOOK_SELECT');
+                if(selectObj){
+                    const {bookName,levelName} = selectObj;
+                    console.log(`select ${bookName}, ${levelName}`)
+                }
+                uni.removeStorageSync('GAGAUTIL_BOOK_SELECT');
+            },
+            goSelectPage(){
+                uni.navigateTo({
+                    url:'/pages/english/selectLesson/index'
+                })
+            },
+            startStudy(){
+                // 可能需要传入学习的章节
+                uni.navigateTo({
+                    url:'/pages/english/studyWords/ready'
+                })
+            }
         }
     }
 </script>
@@ -96,6 +127,18 @@
             border-radius: 40rpx;
         }
     }
+    .english-lesson-select{
+        margin-top: 20rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .lesson-select-btn{
+            width:150rpx;
+            height:50rpx;
+            background: red;
+            
+        }
+    }
     .english-models{
         margin-top:20rpx;
         display: flex;
@@ -106,7 +149,7 @@
             font-size: 24rpx;
             color:#afafaf
         }
-        .start-btn{
+        .play-btn{
             margin-top:20rpx;
             width:520rpx;
             height:92rpx;
