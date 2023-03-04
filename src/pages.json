@@ -68,6 +68,17 @@
           "muyu": "/wxcomponents/muyu/index"
         }
       }
+    },
+    {
+      "path": "pages/imgStyle/index",
+      "style": {
+        "navigationBarTitleText": "生成漫画脸",
+        "navigationBarBackgroundColor": "#000000",
+        "navigationBarTextStyle": "white",
+        "usingComponents":{
+          
+        }
+      }
     }
   ],
   "globalStyle": {
