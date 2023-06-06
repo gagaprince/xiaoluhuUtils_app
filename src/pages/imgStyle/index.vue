@@ -132,9 +132,11 @@
                         Higher precision always require longer time to run session
                         */
                         precisionLevel : 4,
-                        // typicalShape:{input_name:[1, this.imageChannel, this.imgWidth, this.imgHeight]},
-                        allowNPU : false,     // wheather use NPU for inference, only useful for IOS
-                        allowQuantize: false, // wheather generate quantize model
+                        // typicalShape:{ input_image:[1, 3,512,512], output_image:[1,3,512,512]},
+                        typicalShape:{Tanhoutput_image_dim_0:1, Tanhoutput_image_dim_2:512, Tanhoutput_image_dim_3:512 },
+                        allowNPU : true,     // wheather use NPU for inference, only useful for IOS
+                        allowQuantize: true, // wheather generate quantize model
+
                     });
 
                     // 监听error事件
